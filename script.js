@@ -1,4 +1,5 @@
 // task1
+// let timeleft = 5;
 let factory = {
   facName: "nissan",
   calculateWorkload: function () {
@@ -11,7 +12,13 @@ let factory = {
       return workResultdata;
     } else "araa swori";
   },
-  formatArray: function (name) {},
+  formatArray: function (name) {
+    const factoryEmployeesData = this.employees;
+    if (factoryEmployeesData && factoryEmployeesData.length > 0) {
+      let emp = factoryEmployeesData.find((el) => el.name === name);
+      return { name: emp.name, timeleft: 5 - emp.timeSpent };
+    } else "araa swori";
+  },
 };
 
 let factoryEmployees = {
@@ -22,7 +29,6 @@ let factoryEmployees = {
     { name: "Dan", timeSpent: 4 },
     { name: "Lorelai", timeSpent: 5 },
   ],
-  // employeeNum : this.employees.length,
 };
 
 let workloadData = {
@@ -35,9 +41,13 @@ let workloadData = {
   ],
 };
 
-let workArr = factory.calculateWorkload.bind(workloadData)();
+// let workArr = factory.calculateWorkload.bind(workloadData)();
 
-console.log(workArr);
+// console.log(workArr);
+
+let timeSpentformat = factory.formatArray.bind(factoryEmployees, "sam")();
+
+console.log(timeSpentformat);
 
 // task 6
 // let arr2 = [2,2,2,1,30]
