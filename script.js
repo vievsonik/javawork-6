@@ -45,7 +45,7 @@ let workloadData = {
 
 // console.log(workArr);
 
-let timeSpentformat = factory.formatArray.bind(factoryEmployees, "sam")();
+let timeSpentformat = factory.formatArray.bind(factoryEmployees, "dan")();
 
 console.log(timeSpentformat);
 
